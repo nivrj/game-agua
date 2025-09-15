@@ -179,11 +179,11 @@ faucet.innerHTML = `
 
     <!-- anel + bico -->
     <ellipse cx="188" cy="117" rx="13" ry="8" fill="#e8ecef" class="outline"/>
-    <rect x="184" y="116" width="8" height="18" rx="3" fill="#e8ecef" class="outline"/>
+    
 
     <!-- água -->
     <g class="water">
-      <rect x="188" y="134" width="12" height="24" rx="6" fill="url(#waterGrad)"/>
+      <rect x="178" y="120" width="20" height="30" rx="6" fill="url(#waterGrad)"/>
     </g>
     <circle class="drop" cx="194" cy="134" r="5" fill="#82d1ff"/>
   </svg>
