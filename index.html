@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salve a Água — Mini Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>💧 Salve a Água</h1>
+    <div class="hud">
+      <div class="hud-item"><strong>Nível:</strong> <span id="level">1</span></div>
+      <div class="hud-item"><strong>Pontuação:</strong> <span id="score">0</span></div>
+      <div class="hud-item"><strong>Tempo:</strong> <span id="time">60</span>s</div>
+      <div class="hud-item meter">
+        <span>Vazamento</span>
+        <div class="bar"><div id="wasteBar" class="fill"></div></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="startBtn" class="btn primary">Iniciar</button>
+      <button id="restartBtn" class="btn" disabled>Reiniciar</button>
+      <button id="howtoBtn" class="btn ghost">Como jogar</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="board-wrap">
+      <div id="board" class="board" aria-label="Tabuleiro de torneiras" role="grid"></div>
+      <p class="hint">Clique rápido nas <b>torneiras abertas</b> para fechá-las!</p>
+    </section>
+
+    <aside class="sidebar">
+      <h2>🏆 Ranking</h2>
+      <form id="nameForm" class="name-form" autocomplete="off">
+        <label for="playerName">Seu nome</label>
+        <input id="playerName" name="playerName" type="text" maxlength="20" placeholder="Digite seu nome" />
+        <button class="btn sm" type="submit">Salvar</button>
+      </form>
+      <table class="table" aria-label="Ranking de jogadores">
+        <thead>
+          <tr><th>#</th><th>Jogador</th><th>Pontos</th><th>Nível</th></tr>
+        </thead>
+        <tbody id="leaderboard"></tbody>
+      </table>
+      <button id="clearLbBtn" class="btn danger sm">Limpar ranking</button>
+    </aside>
+  </main>
+
+ 
+  <dialog id="howtoModal" class="modal">
+    <h3>Como jogar</h3>
+    <ul>
+      <li>Clique nas <b>torneiras abertas</b> (com água saindo) para fechá-las.</li>
+      <li>Quanto mais rápido fechar, <b>mais pontos</b> você ganha.</li>
+      <li>Evite que o medidor de <b>vazamento</b> encha — se encher, <b>game over</b>.</li>
+      <li>Complete o tempo do nível atingindo a meta de pontos para <b>avançar</b>.</li>
+    </ul>
+    <button class="btn" id="closeHowto">Fechar</button>
+  </dialog>
+
+  <dialog id="levelUpModal" class="modal">
+    <h3>Subiu de nível! 🎉</h3>
+    <p>Prepare-se: mais torneiras e vazamentos mais rápidos.</p>
+    <button class="btn primary" id="nextLevelBtn">Continuar</button>
+  </dialog>
+
+  <dialog id="gameOverModal" class="modal">
+    <h3>Fim de Jogo</h3>
+    <p id="finalStats"></p>
+    <div class="modal-actions">
+      <button class="btn" id="playAgainBtn">Jogar novamente</button>
+      <button class="btn ghost" id="closeGameOver">Fechar</button>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <small>Feito por Nívea, João e Julia</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
